@@ -45,7 +45,7 @@ import Network.Ethereum.Core.BigNumber (BigNumber, toString, hexadecimal)
 import Node.Encoding (Encoding(Hex, UTF8, ASCII))
 import Partial.Unsafe (unsafePartial)
 import Simple.JSON (class ReadForeign, class WriteForeign)
-import Text.Parsing.Parser.String (class StringLike)
+-- import Text.Parsing.Parser.String (class StringLike)
 
 --------------------------------------------------------------------------------
 -- * Signed Values
@@ -92,7 +92,7 @@ derive newtype instance hexStringOrd :: Ord HexString
 derive newtype instance semigpStringEq :: Semigroup HexString
 derive newtype instance monoidStringEq :: Monoid HexString
 
-derive newtype instance stringLikeHexString :: StringLike HexString
+--derive newtype instance stringLikeHexString :: StringLike HexString
 
 _encode :: HexString -> String
 _encode = append "0x" <<< unHex
